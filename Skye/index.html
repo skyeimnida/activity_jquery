@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+                $("#grad1").fadeIn("slow"),
+                $("#grad2").delay(300).fadeIn("slow"),
+                $("#grad3").delay(600).fadeIn("slow"),
+            $("box").click(function(){
+                $(this).animate({
+                    opacity:0.25,
+                    left: "+=50",
+                    height: "toggle"
+                }, 200);
+            }),
+
+        $("#username").keydown(function(event){
+            let size = document.getElementById('username').value.length;
+                if(size < 7){
+                    $("p").html("Username must be atleast 8 characters.");
+                }
+                else {
+                    $("p").html(" ");
+                }
+            });
+        });
+</script>
+<style>
+
+    .grid-container {
+        display: grid;
+        height: 400;
+        align-content: center;
+        grid-template-columns: auto auto auto;
+        grid-gap: 10px;
+        background-color: white;
+        padding: 10px; 
+    }
+
+    #grad1{
+        display: none; 
+        width: 300px;
+        height: 400px;
+        background-color: gray;
+        position: center;
+        background-color: black;
+        background-image: linear-gradient(to bottom right,	#008B8B,	#87CEFA);
+    }
+
+    #grad2 {
+        display: none;
+        width: 300px;
+        height: 400px;
+        position: center;
+        background-color: black;
+        background-image: linear-gradient(to bottom right,	#008B8B,	#87CEFA);       
+    }
+
+    #grad3 {
+        display: none;
+        width: 300px;
+        height: 400px;
+        left: 100px;
+        background-color: black;
+        background-image: linear-gradient(to bottom right,	#008B8B,	#87CEFA);       
+    }
+
+    p {
+
+        color: red;
+    }
+</style>
+</head>
+<body>
+    
+    <div class="grid-container" id="grid">
+        <div class="box" id="grad1"></div>
+        <div class="box" id="grad2"></div>
+        <div class="box" id="grad3"></div>
+    </div>
+
+    Enter Username: <input type="text" id="username" name="username">
+    <p></p>
+
+<script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+
+</body>
+</html>
